@@ -2,12 +2,12 @@ from django.db import models
 
 
 class ChocoPackage(models.Model):
-    software_name = models.CharField('nom du logiciel',
-                                     max_length=50,
-                                     unique=True)
     package_name = models.CharField('nom du paquet',
                                     max_length=50,
                                     unique=True)
+    software_name = models.CharField('nom du logiciel',
+                                     max_length=50,
+                                     unique=True)
     software_description = models.CharField('description',
                                             max_length=200,
                                             blank=True,
