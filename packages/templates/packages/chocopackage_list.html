@@ -1,9 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Générateur chocolatey</title>
+    <link href="{% static "packages/img/favicon.ico" %}" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
     <h1>Packages</h1>
@@ -20,14 +22,15 @@
     <script type='x-template' id='package-item-template'>
         <div>
             <input type="checkbox" v-model="package.selected" v-bind:id="'pack'+package.id"/>
-            <label v-bind:for="'pack'+package.id"><strong>{{ package.software}}:&nbsp;</strong></label>
-            <span>{{ package.description }}</span>
+	    <label v-bind:for="'pack'+package.id"><strong><span v-html="package.software"></span>:&nbsp;</strong></label>
+	    <span v-html="package.description"></span>
         </div>
     </script>
 
     <!-- {% endverbatim %} -->
 
     <script src='https://unpkg.com/vue'></script>
+    <script src="https://cdn.jsdelivr.net/npm/he@1.2.0/he.min.js"></script>
     <script>
         Vue.component('package-item',{
             props : ['package'],
@@ -47,28 +50,7 @@
                             selected: {% if package.selected_by_default %}true{% else %}false{% endif %},
                         },
                 {% endfor %}
-                        // {
-                        // id: '1',
-                        // name: 'vlc',
-                        // software: 'VLC',
-                        // description: 'lecteur multimedia polyvalent',
-                        // selected: true,
-                        // },
-                        // {
-                        // id: '2',
-                        // name: 'googlechrome',
-                        // software: 'Google Chrome',
-                        // description: 'Navigateur Google',
-                        // selected: true,
-                        // },
-                        // {
-                        // id: '3',
-                        // name: 'vscode',
-                        // software: 'Visual Studio Code',
-                        // description: 'Éditeur de code Microsoft',
-                        // selected: true,
-                        // }
-                    ]
+                ]
             },
             methods: {
                 downloadScript () {
@@ -80,8 +62,8 @@
                     });
                     msg += 'pause\n'
                     console.log(msg);
-                    download(msg, 'toto.bat', 'text', 'text/plain;charset=utf-8;');
-                }
+                    download(msg, 'install_softs.bat', 'text', 'text/plain;charset=utf-8;');
+                },
             }
 
         });

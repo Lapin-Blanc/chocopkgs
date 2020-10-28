@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from packages.views import ChocoPackageListView
 
+admin.site.site_header = 'Générateur chocolatey'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', ChocoPackageListView.as_view(), name='chocopackages-list'),
