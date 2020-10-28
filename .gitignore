@@ -1,6 +1,6 @@
 # VS code configuration
 .vscode/
-static/
+/static/
 */migrations/0*
 # Byte-compiled / optimized / DLL files
 __pycache__/
