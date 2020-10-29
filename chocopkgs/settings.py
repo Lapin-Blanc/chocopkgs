@@ -25,7 +25,7 @@ SECRET_KEY = '8!=9$#s%mh4-g4bk=6shtokuedtzhc8xe%w_18+49gmk05&-gi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['choco.lapin-blanc.com']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
