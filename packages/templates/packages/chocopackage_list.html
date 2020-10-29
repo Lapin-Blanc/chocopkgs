@@ -11,22 +11,29 @@
 </head>
 <body style='background-color: #ccdcdc;'>
   <div id='app'>
-    <div id='container' class="w3-container">
-      <div class="w3-display-middle w3-margin">
-        <div class="w3-container w3-theme-d5">
-          <h2>Générateur de script</h2>
-        </div>
-        <form class="w3-container w3-card-4 w3-theme-l5">
-          <div v-for="package in packages">
-              <package-item :package='package'></package-item>
+      <div class="w3-contaier w3-top-middle w3-margin">
+        
+        <div class="w3-container w3-quarter"></div>
+        
+        <div class="w3-container w3-half">
+          <div class="w3-container w3-theme-d5">
+            <h2>Générateur de script</h2>
           </div>
-        <div class="w3-center">
-          <button class="w3-button w3-theme-d5" @click="downloadScript">Télécharger le script d'installation</button>
+          <form class="w3-container w3-card-4 w3-theme-l5">
+            <div v-for="package in packages">
+                <package-item :package='package'></package-item>
+            </div>
+            <div class="w3-center">
+              <button class="w3-button w3-theme-d5" @click="downloadScript">Télécharger le script d'installation</button>
+            </div>
+          </form>
+          
         </div>
-        </form>
+        
+        <div class="w3-container w3-quarter"></div>
+        <div class="w3-container w3-section">
+        </div>      
       </div>
-      <div class="w3-display-bottomright"><img src="{% static 'packages/img/coffee.jpg' %}" alt="cup of coffee"></div>
-    </div>
   </div>
 
 <!-- Vue templates -->
