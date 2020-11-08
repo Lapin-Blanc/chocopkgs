@@ -1,2 +1,2 @@
-# chocopkgs
+## chocopkgs
 Chocoloatey script generator
